@@ -3,7 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { razorpay } = require("./config/razorpay");
-const cors = require("cors");
 const {
   validateWebhookSignature,
 } = require("razorpay/dist/utils/razorpay-utils");
@@ -11,7 +10,6 @@ const app = express();
 const PORT = process.env.Port || 3000;
 const amount = process.env.AMOUNT;
 
-app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
