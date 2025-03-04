@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // serve a static files
 app.use(express.static(path.join(__dirname)));
 
+app.get("/", async (req, res) => {
+  res.send("Hello World");
+});
+
 app.post("/create-order", async (req, res) => {
   try {
     const options = {
